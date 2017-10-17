@@ -1,0 +1,13 @@
+---
+- name: install remi repo for redis
+  yum: name=http://rpms.famillecollet.com/enterprise/remi-release-7.rpm state=present
+
+- name: install redis
+  yum: name=redis-{{ redis_version }} state=present enablerepo=remi
+
+- name: put redis configuration
+  template: src=redis.conf.j2 dest=/etc/redis.conf mode=0644 owner=redis group=root
+  notify: restart redis
+
+- name: register service
+  systemd: name=redis state=started daemon_reload=yes enabled=yes

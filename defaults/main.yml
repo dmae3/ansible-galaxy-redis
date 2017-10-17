@@ -1,0 +1,11 @@
+---
+redis_version: "*"
+redis_bind_address: 127.0.0.1
+redis_port: 6379
+redis_daemonize_enabled: "yes"
+redis_tcp_backlog: 511
+redis_timeout: 0
+redis_tcp_keepalive: 300
+redis_log_file_path: /var/log/redis/redis.log
+redis_log_level: verbose
+redis_databases: 16
