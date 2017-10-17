@@ -54,7 +54,7 @@ Example Playbook
 - hosts: all
   become: true
   roles:
-    - { role: redis, redis_version: 3.2.1 }
+    - { role: galaxy-redis, redis_version: 3.2.1 }
 ```
 
 License
